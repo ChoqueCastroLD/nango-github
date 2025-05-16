@@ -1,17 +1,10 @@
 import type { StarGazer, Author, Organization } from "../../models";
 import type { StargazerGraphQLResponse } from "../types";
+import { toOrganization } from "./to-organization";
 
 export function toStargazer(edge: StargazerGraphQLResponse): StarGazer {
-  const organizations: Organization[] = edge.node.organizations.nodes.map(
-    (org) => ({
-      id: org.id,
-      name: org.name,
-      url: org.url,
-      avatarUrl: org.avatarUrl,
-      description: org.description || "",
-      websiteUrl: org.websiteUrl || "",
-    })
-  );
+  const organizations: Organization[] =
+    edge.node.organizations.nodes.map(toOrganization);
 
   const user: Author = {
     id: edge.node.id,

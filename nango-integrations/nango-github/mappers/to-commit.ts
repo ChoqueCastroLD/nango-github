@@ -1,20 +1,12 @@
 import type { Commit, Organization } from "../../models";
-import { CommitGraphQLResponse, OrganizationGraphQLResponse } from "../types";
+import { CommitGraphQLResponse } from "../types";
+import { toOrganization } from "./to-organization";
 
 export function toCommit(edge: CommitGraphQLResponse, branch: string): Commit {
   const node = edge.node;
 
   const organizations: Organization[] =
-    node.author.user?.organizations.nodes.map(
-      (org: OrganizationGraphQLResponse) => ({
-        id: org.id,
-        name: org.name,
-        url: org.url,
-        avatarUrl: org.avatarUrl,
-        description: org.description || "",
-        websiteUrl: org.websiteUrl || "",
-      })
-    );
+    node.author.user?.organizations.nodes.map(toOrganization);
 
   return {
     id: node.id,

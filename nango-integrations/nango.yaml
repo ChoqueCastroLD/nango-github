@@ -27,6 +27,19 @@ integrations:
         auto_start: true
         input: GithubRepositoryInput
         output: Commit
+      github-pullrequests:
+        description: |
+          Fetches the Github pull requests from a repository.
+          Details: incremental sync
+        endpoint:
+          method: GET
+          path: /github/pullrequests
+        sync_type: incremental
+        scopes: public_repo
+        runs: every hour
+        auto_start: true
+        input: GithubRepositoryInput
+        output: PullRequest
 
 models:
   GithubRepositoryInput:

@@ -555,6 +555,36 @@ export const NangoFlows = [
           }
         ],
         "webhookSubscriptions": []
+      },
+      {
+        "name": "github-pullrequests",
+        "type": "sync",
+        "description": "Fetches the Github pull requests from a repository.\nDetails: incremental sync",
+        "sync_type": "incremental",
+        "usedModels": [
+          "PullRequest",
+          "Author",
+          "Organization",
+          "GithubRepositoryInput"
+        ],
+        "runs": "every hour",
+        "version": "",
+        "track_deletes": false,
+        "auto_start": true,
+        "input": "GithubRepositoryInput",
+        "output": [
+          "PullRequest"
+        ],
+        "scopes": [
+          "public_repo"
+        ],
+        "endpoints": [
+          {
+            "method": "GET",
+            "path": "/github/pullrequests"
+          }
+        ],
+        "webhookSubscriptions": []
       }
     ],
     "actions": [],
