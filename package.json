@@ -1,0 +1,24 @@
+{
+  "name": "nango-github",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChoqueCastroLD/nango-github.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChoqueCastroLD/nango-github/issues"
+  },
+  "homepage": "https://github.com/ChoqueCastroLD/nango-github#readme",
+  "dependencies": {
+    "@nangohq/node": "^0.58.7",
+    "zod": "^3.24.4"
+  }
+}

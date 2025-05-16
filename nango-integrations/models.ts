@@ -45,7 +45,7 @@ export interface Commit {
   message: string;
   additions: number;
   deletions: number;
-  changedFiles: string;
+  changedFiles: number;
 };
 
 export interface StarGazer {
@@ -507,7 +507,7 @@ export const NangoFlows = [
           "Organization",
           "GithubRepositoryInput"
         ],
-        "runs": "every half hour",
+        "runs": "every hour",
         "version": "",
         "track_deletes": false,
         "auto_start": true,
@@ -522,6 +522,36 @@ export const NangoFlows = [
           {
             "method": "GET",
             "path": "/github/stars"
+          }
+        ],
+        "webhookSubscriptions": []
+      },
+      {
+        "name": "github-commits",
+        "type": "sync",
+        "description": "Fetches the Github commits from a repository.\nDetails: incremental sync",
+        "sync_type": "incremental",
+        "usedModels": [
+          "Commit",
+          "Author",
+          "Organization",
+          "GithubRepositoryInput"
+        ],
+        "runs": "every hour",
+        "version": "",
+        "track_deletes": false,
+        "auto_start": true,
+        "input": "GithubRepositoryInput",
+        "output": [
+          "Commit"
+        ],
+        "scopes": [
+          "public_repo"
+        ],
+        "endpoints": [
+          {
+            "method": "GET",
+            "path": "/github/commits"
           }
         ],
         "webhookSubscriptions": []

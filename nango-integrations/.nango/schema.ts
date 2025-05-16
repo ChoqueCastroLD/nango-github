@@ -43,7 +43,7 @@ export interface Commit {
   message: string;
   additions: number;
   deletions: number;
-  changedFiles: string;
+  changedFiles: number;
 };
 
 export interface StarGazer {

@@ -144,7 +144,7 @@
           "type": "number"
         },
         "changedFiles": {
-          "type": "string"
+          "type": "number"
         }
       },
       "required": [
