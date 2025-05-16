@@ -115,7 +115,7 @@ The integration supports repository-specific configurations:
 Test github-stars locally with validation
 
 ```
-nango dryrun github-stars test-connection-id -m '{"owner":"NangoHQ","repo":"sample-app"}' --validation
+nango dryrun github-stars test-connection-id -m '{"owner":"NangoHQ","repo":"nango"}' --validation
 ```
 
 Test github-commits locally with validation
@@ -127,5 +127,5 @@ nango dryrun github-commits test-connection-id -m '{"owner":"ChoqueCastroLD","re
 Test github-pullrequests locally with validation
 
 ```
-nango dryrun github-pullrequests test-connection-id -m '{"owner":"NangoHQ","repo":"datadog-agent"}' --validation
+nango dryrun github-pullrequests test-connection-id -m '{"owner":"NangoHQ","repo":"nango"}' --validation
 ```

@@ -5,7 +5,7 @@ export function toPullRequest(edge: any): PullRequest {
   const node = edge.node;
 
   const organizations: Organization[] =
-    node.author?.organizations.nodes.map(toOrganization) || [];
+    node.author?.organizations?.nodes.map(toOrganization) || [];
 
   return {
     id: node.id,
@@ -19,7 +19,7 @@ export function toPullRequest(edge: any): PullRequest {
       location: node.author?.location || "",
       organizations: organizations,
     },
-    labels: node.labels.nodes.map((label: any) => label.name),
+    labels: node.labels?.nodes.map((label: any) => label.name) || [],
     numberOfComments: node.comments.totalCount,
   };
 }
