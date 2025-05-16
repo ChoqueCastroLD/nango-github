@@ -162,7 +162,6 @@
       "required": [
         "id",
         "url",
-        "author",
         "branch",
         "message",
         "additions",

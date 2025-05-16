@@ -44,7 +44,7 @@ export interface PullRequest {
 export interface Commit {
   id: string;
   url: string;
-  author: Author;
+  author?: Author;
   branch: string;
   message: string;
   additions: number;

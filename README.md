@@ -121,7 +121,7 @@ nango dryrun github-stars test-connection-id -m '{"owner":"NangoHQ","repo":"nang
 Test github-commits locally with validation
 
 ```
-nango dryrun github-commits test-connection-id -m '{"owner":"ChoqueCastroLD","repo":"nango-github"}' --validation
+nango dryrun github-commits test-connection-id -m '{"owner":"NangoHQ","repo":"nango"}' --validation
 ```
 
 Test github-pullrequests locally with validation
