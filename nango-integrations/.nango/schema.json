@@ -9,6 +9,18 @@
         },
         "repo": {
           "type": "string"
+        },
+        "isOutsideContributor": {
+          "type": "boolean"
+        },
+        "isBot": {
+          "type": "boolean"
+        },
+        "daysOpenBeforeMerged": {
+          "type": "number"
+        },
+        "numberOfDaysOpen": {
+          "type": "number"
         }
       },
       "required": [

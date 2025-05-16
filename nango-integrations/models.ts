@@ -8,6 +8,10 @@
 export interface GithubRepositoryInput {
   owner: string;
   repo: string;
+  isOutsideContributor?: boolean;
+  isBot?: boolean;
+  daysOpenBeforeMerged?: number;
+  numberOfDaysOpen?: number;
 };
 
 export interface Organization {
@@ -510,7 +514,7 @@ export const NangoFlows = [
         "runs": "every hour",
         "version": "",
         "track_deletes": false,
-        "auto_start": true,
+        "auto_start": false,
         "input": "GithubRepositoryInput",
         "output": [
           "StarGazer"
@@ -540,7 +544,7 @@ export const NangoFlows = [
         "runs": "every hour",
         "version": "",
         "track_deletes": false,
-        "auto_start": true,
+        "auto_start": false,
         "input": "GithubRepositoryInput",
         "output": [
           "Commit"
@@ -570,7 +574,7 @@ export const NangoFlows = [
         "runs": "every hour",
         "version": "",
         "track_deletes": false,
-        "auto_start": true,
+        "auto_start": false,
         "input": "GithubRepositoryInput",
         "output": [
           "PullRequest"

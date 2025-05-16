@@ -6,6 +6,10 @@
 export interface GithubRepositoryInput {
   owner: string;
   repo: string;
+  isOutsideContributor?: boolean;
+  isBot?: boolean;
+  daysOpenBeforeMerged?: number;
+  numberOfDaysOpen?: number;
 };
 
 export interface Organization {
