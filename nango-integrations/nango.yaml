@@ -1,0 +1,54 @@
+integrations:
+  nango-github:
+    syncs:
+      github-stars:
+        description: |
+          Fetches the Github stars from a repository.
+          Details: incremental sync
+        endpoint:
+          method: GET
+          path: /github/stars
+        sync_type: incremental
+        scopes: public_repo
+        runs: every half hour
+        auto_start: true
+        input: GithubRepositoryInput
+        output: StarGazer
+models:
+  GithubRepositoryInput:
+    owner: string
+    repo: string
+  Organization:
+    id: string
+    name: string
+    url: string
+    avatarUrl: string
+    description: string
+    websiteUrl: string
+  Author:
+    id: string
+    url: string
+    bio: string
+    avatarUrl: string
+    location: string
+    organizations: Organization[]
+  PullRequest:
+    id: string
+    url: string
+    title: string
+    author: Author
+    labels: string[]
+    numberOfComments: number
+  Commit:
+    id: string
+    url: string
+    author: Author
+    branch: string
+    message: string
+    additions: number
+    deletions: number
+    changedFiles: string
+  StarGazer:
+    id: string
+    user: Author
+    createdAt: date
